@@ -21,3 +21,5 @@ const alunos = [
         nota2: 9.5 
     }
 ];
+
+export default alunos;
