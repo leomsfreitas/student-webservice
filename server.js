@@ -33,11 +33,17 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = users.find(u => u.username === username);
+  
   if (!user || !(await bcrypt.compare(password, user.password))) {
     return res.status(401).send("Credenciais inválidas.");
   }
+  
   const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET, { expiresIn: "1h" });
-  res.json({ token });
+
+  res.json({
+    message: `Login efetuado pelo usuário ${user.username}`,
+    jwt: token
+  });
 });
 
 app.get("/alunos", authenticateJWT, (req, res) => {
