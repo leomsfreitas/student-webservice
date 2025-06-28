@@ -17,6 +17,9 @@ Todos os dados (usuários e alunos) ficam em **arrays na memória**. O `id` do a
   - `POST`: Adiciona aluno (protegido)
   - `PUT /alunos/:id`: Atualiza aluno (protegido)
   - `DELETE /alunos/:id`: Remove aluno (protegido)
+  - `GET /alunos/:id`: Retorna dados de um aluno específico (protegido)
+  - `GET /alunos/medias`: Retorna nome e média das notas de todos os alunos (protegido)
+  - `GET /alunos/aprovados`: Retorna nome e status de aprovação de todos os alunos (protegido)
 
 ## Tecnologias
 
@@ -32,6 +35,7 @@ Todos os dados (usuários e alunos) ficam em **arrays na memória**. O `id` do a
 student-webservice/
 ├── .env
 ├── server.js
+├── alunos.js
 ├── package.json
 └── README.md
 ```
